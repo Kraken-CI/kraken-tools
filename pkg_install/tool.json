@@ -1,0 +1,20 @@
+{
+    "name": "pkg_install",
+    "description": "A tool that allows for installing packages using various providers.",
+    "location": ".",
+    "entry": "main",
+    "parameters": {
+        "additionalProperties": false,
+        "required": ["pkgs"],
+        "properties": {
+            "pkgs": {
+                "description": "A list of packages to install.",
+                "type": "string"
+            },
+            "provider": {
+                "description": "A provider to be used to do installation. Available providers: apt, yum, dnf, apk. By default native one is used in given distribution e.g. apt on Ubuntu",
+                "enum": ["apt", "yum", "dnf", "apk"]
+            }
+        }
+    }
+}
